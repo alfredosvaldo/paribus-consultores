@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "node --test tests/*.test.ts",
-    "test:routes": "node scripts/check-routes.mjs"
+    "test:routes": "node scripts/check-routes.mjs",
+    "preview": "wrangler dev"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.3.0",
@@ -20,6 +21,7 @@
     "react-dom": "19.2.8"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.20.5",
     "@tailwindcss/postcss": "4.3.3",
     "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
@@ -28,6 +30,7 @@
     "eslint-config-next": "16.3.3",
     "lighthouse": "^13.4.1",
     "tailwindcss": "4.3.3",
-    "typescript": "^5.9.0"
+    "typescript": "^5.9.0",
+    "wrangler": "^4.127.1"
   }
 }

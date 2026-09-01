@@ -123,7 +123,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </main>
       <footer className="site-footer">
         <div className="footer-grid frame">
-          <div><p className="footer-brand"><BrandLockup showDescriptor={false} /></p><p>{content.footer.descriptor}</p></div>
+          <div><p className="footer-brand"><BrandLockup showDescriptor={false} /></p><p>{content.footer.descriptor}</p><p>{content.footer.location}</p></div>
           <p>© {new Date().getFullYear()} paribus</p>
         </div>
       </footer>

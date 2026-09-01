@@ -48,7 +48,7 @@ export type SiteContent = {
     body: string;
     emailCta: string;
   };
-  footer: { descriptor: string };
+  footer: { descriptor: string; location: string };
 };
 
 export const siteContent: Record<Locale, SiteContent> = {
@@ -135,6 +135,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     footer: {
       descriptor: "Consultoría económica, financiera y regulatoria",
+      location: "Santiago, Chile",
     },
   },
   en: {
@@ -220,6 +221,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     footer: {
       descriptor: "Economic, financial and regulatory consulting",
+      location: "Santiago, Chile",
     },
   },
 };

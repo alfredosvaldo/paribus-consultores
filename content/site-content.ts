@@ -79,7 +79,6 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     nav: [
       { label: "Áreas de práctica", href: "#areas" },
-      { label: "Jorge Valverde", href: "#jorge-valverde" },
       { label: "Contacto", href: "#contacto" },
     ],
     languageLabel: "Cambiar idioma a inglés",
@@ -175,7 +174,6 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     nav: [
       { label: "Areas of Practice", href: "#areas" },
-      { label: "Jorge Valverde", href: "#jorge-valverde" },
       { label: "Contact", href: "#contacto" },
     ],
     languageLabel: "Switch language to Spanish",

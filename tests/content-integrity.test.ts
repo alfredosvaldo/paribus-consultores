@@ -3,8 +3,8 @@ import test from "node:test";
 import { siteContent } from "../content/site-content.ts";
 
 test("both locales contain the same navigation and section counts", () => {
-  assert.deepEqual(siteContent.es.nav.map((item) => item.href), ["#areas", "#jorge-valverde", "#contacto"]);
-  assert.deepEqual(siteContent.en.nav.map((item) => item.href), ["#areas", "#jorge-valverde", "#contacto"]);
+  assert.deepEqual(siteContent.es.nav.map((item) => item.href), ["#areas", "#contacto"]);
+  assert.deepEqual(siteContent.en.nav.map((item) => item.href), ["#areas", "#contacto"]);
   assert.equal(siteContent.es.practices.items.length, 3);
   assert.equal(siteContent.en.practices.items.length, 3);
   assert.deepEqual(siteContent.es.practices.items.map((item) => item.visual), ["economics", "finance", "regulation"]);

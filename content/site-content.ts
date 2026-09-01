@@ -14,17 +14,7 @@ type FounderPortrait = {
   sourceUrl: string | null;
 };
 
-export type ContactCopy = {
-  name: string;
-  email: string;
-  message: string;
-  submit: string;
-  submitting: string;
-  required: string;
-  invalidEmail: string;
-  notEnabled: string;
-  genericError: string;
-};
+export const contactEmail = "jvalverde@paribus.cl";
 
 export type SiteContent = {
   locale: Locale;
@@ -56,7 +46,7 @@ export type SiteContent = {
   contact: {
     title: string;
     body: string;
-    form: ContactCopy;
+    emailCta: string;
   };
   footer: { descriptor: string };
 };
@@ -141,17 +131,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     contact: {
       title: "Conversemos.",
       body: "Si estás evaluando un problema económico, financiero o regulatorio, podemos conversar.",
-      form: {
-        name: "Nombre",
-        email: "Correo",
-        message: "Mensaje",
-        submit: "Contactar",
-        submitting: "Validando…",
-        required: "Este campo es obligatorio.",
-        invalidEmail: "Ingrese un correo válido.",
-        notEnabled: "El envío de mensajes aún no está habilitado.",
-        genericError: "No fue posible validar el mensaje. Revise los campos e intente nuevamente.",
-      },
+      emailCta: "Escríbenos",
     },
     footer: {
       descriptor: "Consultoría económica, financiera y regulatoria",
@@ -236,17 +216,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     contact: {
       title: "Let’s talk.",
       body: "If you are considering an economic, financial or regulatory problem, we can discuss it.",
-      form: {
-        name: "Name",
-        email: "Email",
-        message: "Message",
-        submit: "Contact",
-        submitting: "Validating…",
-        required: "This field is required.",
-        invalidEmail: "Enter a valid email address.",
-        notEnabled: "Message delivery is not yet enabled.",
-        genericError: "The message could not be validated. Review the fields and try again.",
-      },
+      emailCta: "Email us",
     },
     footer: {
       descriptor: "Economic, financial and regulatory consulting",

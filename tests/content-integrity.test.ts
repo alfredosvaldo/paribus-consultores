@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { siteContent } from "../content/site-content.ts";
+import { contactEmail, siteContent } from "../content/site-content.ts";
 
 test("both locales contain the same navigation and section counts", () => {
   assert.deepEqual(siteContent.es.nav.map((item) => item.href), ["#areas", "#contacto"]);
@@ -27,7 +27,8 @@ test("English copy uses the approved British forms", () => {
   assert.match(siteContent.en.metadata.description, /organisations/);
 });
 
-test("unconfigured form messages never imply successful delivery", () => {
-  assert.equal(siteContent.es.contact.form.notEnabled, "El envío de mensajes aún no está habilitado.");
-  assert.equal(siteContent.en.contact.form.notEnabled, "Message delivery is not yet enabled.");
+test("contact CTAs point at the founder's email", () => {
+  assert.equal(contactEmail, "jvalverde@paribus.cl");
+  assert.ok(siteContent.es.contact.emailCta.length > 0);
+  assert.ok(siteContent.en.contact.emailCta.length > 0);
 });

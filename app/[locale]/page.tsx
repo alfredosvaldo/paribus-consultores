@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { BrandLockup } from "@/components/BrandLockup";
-import { ContactForm } from "@/components/ContactForm";
 import { HeroVideo } from "@/components/HeroVideo";
 import { PracticeVisual } from "@/components/PracticeVisual";
 import { SiteHeader } from "@/components/SiteHeader";
-import { isLocale, siteContent } from "@/content/site-content";
+import { contactEmail, isLocale, siteContent } from "@/content/site-content";
 import { configuredSiteUrl, isIndexable } from "@/lib/site-config";
 
 export async function generateMetadata({
@@ -67,7 +66,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <p className="hero-body">{content.hero.body}</p>
             <div className="hero-actions">
               <a className="button button-light" href="#areas">{content.hero.primaryCta}</a>
-              <a className="text-link" href="#contacto">{content.hero.secondaryCta}</a>
+              <a className="text-link" href={`mailto:${contactEmail}`}>{content.hero.secondaryCta}</a>
             </div>
           </div>
         </section>
@@ -118,7 +117,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <section className="contact section-contact" id="contacto" aria-labelledby="contact-title">
           <div className="contact-grid frame">
             <div className="contact-heading"><h2 id="contact-title">{content.contact.title}</h2><p>{content.contact.body}</p></div>
-            <div className="contact-form-wrap"><ContactForm locale={content.locale} copy={content.contact.form} /></div>
+            <a className="button button-light" href={`mailto:${contactEmail}`}>{content.contact.emailCta}</a>
           </div>
         </section>
       </main>

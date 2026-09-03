@@ -526,6 +526,8 @@ textarea:focus-visible {
   max-width: 1080px;
 }
 
+.founder-grid + .founder-grid { margin-top: clamp(3rem, 5vw, 4.5rem); }
+
 .founder-portrait {
   width: min(100%, 270px);
   margin-left: 0;

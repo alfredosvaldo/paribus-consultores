@@ -22,6 +22,20 @@ test("founder content and the supplied portrait are approved", () => {
   }
 });
 
+test("associate content and portrait are approved", () => {
+  for (const locale of ["es", "en"] as const) {
+    assert.equal(siteContent[locale].associates.length, 1);
+    const [associate] = siteContent[locale].associates;
+    assert.equal(associate.name, "Alexis Salazar");
+    assert.equal(associate.portrait.src, "/images/alexis-salazar-cutout.png");
+    assert.equal(associate.portrait.verified, true);
+    assert.equal(associate.portrait.temporary, false);
+    assert.equal(associate.portrait.approvedForProduction, true);
+    assert.equal(associate.portrait.sourceUrl, null);
+    assert.equal(associate.details.every((detail) => detail.verified), true);
+  }
+});
+
 test("English copy uses the approved British forms", () => {
   assert.match(siteContent.en.hero.title, /Rigour/);
   assert.match(siteContent.en.metadata.description, /organisations/);

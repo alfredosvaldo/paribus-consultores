@@ -26,7 +26,10 @@ for (const locale of ["es", "en"]) {
   assert.match(html, /jorge-valverde-cutout\.png/);
   assert.match(html, /Maastricht University/);
   assert.match(html, /UNU-MERIT/);
-  assert.doesNotMatch(html, /Universidad de Chile|University of Chile|FEN|OTEI/);
+  assert.doesNotMatch(html, /\bFEN\b|OTEI/);
+  assert.match(html, /alexis-salazar-cutout\.png/);
+  assert.match(html, /Alexis Salazar/);
+  assert.match(html, /Universidad de Chile|University of Chile/);
   assert.equal((html.match(/class="practice-visual practice-visual-/g) ?? []).length, 3);
   assert.equal((html.match(/aria-hidden="true" class="practice-visual/g) ?? []).length, 3);
 }

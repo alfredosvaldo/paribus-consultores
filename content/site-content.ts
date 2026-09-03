@@ -4,14 +4,22 @@ export type Locale = (typeof locales)[number];
 
 export type PracticeVisualKind = "economics" | "finance" | "regulation";
 type PracticeArea = { title: string; description: string; visual: PracticeVisualKind };
-type FounderDetail = { body: string; verified: boolean };
-type FounderPortrait = {
+type PersonDetail = { body: string; verified: boolean };
+type PersonPortrait = {
   src: string | null;
   alt: string | null;
+  width: number;
+  height: number;
   verified: boolean;
   temporary: boolean;
   approvedForProduction: boolean;
   sourceUrl: string | null;
+};
+export type TeamMember = {
+  name: string;
+  role: string;
+  portrait: PersonPortrait;
+  details: PersonDetail[];
 };
 
 export const contactEmail = "jvalverde@paribus.cl";
@@ -37,12 +45,9 @@ export type SiteContent = {
   };
   statement: { title: string; body: string };
   practices: { title: string; items: PracticeArea[] };
-  founder: {
-    name: string;
-    role: string;
-    portrait: FounderPortrait;
-    details: FounderDetail[];
-  };
+  teamLabel: string;
+  founder: TeamMember;
+  associates: TeamMember[];
   contact: {
     title: string;
     body: string;
@@ -106,11 +111,14 @@ export const siteContent: Record<Locale, SiteContent> = {
         },
       ],
     },
+    teamLabel: "Equipo",
     founder: {
       name: "Jorge Valverde Carbonell",
       role: "Fundador",
       portrait: {
         src: "/images/jorge-valverde-cutout.png",
+        width: 820,
+        height: 1220,
         alt: "Retrato de Jorge Valverde Carbonell",
         verified: true,
         temporary: false,
@@ -128,6 +136,32 @@ export const siteContent: Record<Locale, SiteContent> = {
         },
       ],
     },
+    associates: [
+      {
+        name: "Alexis Salazar",
+        role: "Consultor asociado",
+        portrait: {
+          src: "/images/alexis-salazar-cutout.png",
+          width: 576,
+          height: 576,
+          alt: "Retrato de Alexis Salazar",
+          verified: true,
+          temporary: false,
+          approvedForProduction: true,
+          sourceUrl: null,
+        },
+        details: [
+          {
+            body: "Doctor (c) en Economía por Maastricht University y UNU-MERIT. Economista y Magíster en Economía por la Universidad de Chile, con un Magíster en Regulación y Mercados de la Competencia de la Barcelona School of Economics.",
+            verified: true,
+          },
+          {
+            body: "Cuenta con más de doce años de experiencia en consultoría económica, litigios y arbitraje, y libre competencia, asesorando a empresas y estudios jurídicos en Chile y Europa. Fue Coordinador Económico Anticarteles en la FNE y trabajó en Compass Lexecon (Bruselas) y Butelmann Consultores. Es socio fundador de SG Economics y docente de postgrado en la Universidad Adolfo Ibáñez.",
+            verified: true,
+          },
+        ],
+      },
+    ],
     contact: {
       title: "Conversemos.",
       body: "Si estás evaluando un problema económico, financiero o regulatorio, podemos conversar.",
@@ -192,11 +226,14 @@ export const siteContent: Record<Locale, SiteContent> = {
         },
       ],
     },
+    teamLabel: "Team",
     founder: {
       name: "Jorge Valverde Carbonell",
       role: "Founder",
       portrait: {
         src: "/images/jorge-valverde-cutout.png",
+        width: 820,
+        height: 1220,
         alt: "Portrait of Jorge Valverde Carbonell",
         verified: true,
         temporary: false,
@@ -214,6 +251,32 @@ export const siteContent: Record<Locale, SiteContent> = {
         },
       ],
     },
+    associates: [
+      {
+        name: "Alexis Salazar",
+        role: "Associate Consultant",
+        portrait: {
+          src: "/images/alexis-salazar-cutout.png",
+          width: 576,
+          height: 576,
+          alt: "Portrait of Alexis Salazar",
+          verified: true,
+          temporary: false,
+          approvedForProduction: true,
+          sourceUrl: null,
+        },
+        details: [
+          {
+            body: "Doctoral candidate in Economics at Maastricht University and UNU-MERIT. Economist and MA in Economics from the University of Chile, with an MSc in Competition and Market Regulation from the Barcelona School of Economics.",
+            verified: true,
+          },
+          {
+            body: "He has over twelve years of experience across economic consulting, litigation and arbitration, and competition law, advising companies and law firms in Chile and Europe. He served as Anti-Cartel Economic Coordinator at Chile's competition authority (FNE) and worked at Compass Lexecon (Brussels) and Butelmann Consultores. He is a founding partner of SG Economics and teaches postgraduate courses at Universidad Adolfo Ibáñez.",
+            verified: true,
+          },
+        ],
+      },
+    ],
     contact: {
       title: "Let’s talk.",
       body: "If you are considering an economic, financial or regulatory problem, we can discuss it.",

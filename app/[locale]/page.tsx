@@ -5,7 +5,7 @@ import { BrandLockup } from "@/components/BrandLockup";
 import { HeroVideo } from "@/components/HeroVideo";
 import { PracticeVisual } from "@/components/PracticeVisual";
 import { SiteHeader } from "@/components/SiteHeader";
-import { contactEmail, isLocale, siteContent } from "@/content/site-content";
+import { contactEmail, isLocale, siteContent, type TeamMember } from "@/content/site-content";
 import { configuredSiteUrl, isIndexable } from "@/lib/site-config";
 
 export async function generateMetadata({
@@ -46,12 +46,36 @@ export async function generateMetadata({
   };
 }
 
+function TeamMemberRow({ member, headingId }: { member: TeamMember; headingId: string }) {
+  const verifiedDetails = member.details.filter((detail) => detail.verified);
+  const portrait = member.portrait;
+
+  return (
+    <article className="founder-grid frame">
+      {portrait.src && portrait.verified ? (
+        <div className="founder-portrait">
+          <Image
+            src={portrait.src}
+            alt={portrait.alt ?? member.name}
+            width={portrait.width}
+            height={portrait.height}
+            sizes="(max-width: 640px) 68vw, (max-width: 1100px) 36vw, 460px"
+          />
+        </div>
+      ) : null}
+      <div className="founder-content">
+        <h2 id={headingId}>{member.name}</h2>
+        <p className="founder-role">{member.role}</p>
+        {verifiedDetails.map((detail) => <p key={detail.body} className="founder-detail">{detail.body}</p>)}
+      </div>
+    </article>
+  );
+}
+
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const content = siteContent[locale];
-  const verifiedFounderDetails = content.founder.details.filter((detail) => detail.verified);
-  const founderPortrait = content.founder.portrait;
 
   return (
     <>
@@ -93,25 +117,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </section>
 
-        <section className="founder section-light" id="jorge-valverde" aria-labelledby="founder-title">
-          <div className="founder-grid frame">
-            {founderPortrait.src && founderPortrait.verified ? (
-              <div className="founder-portrait">
-                <Image
-                  src={founderPortrait.src}
-                  alt={founderPortrait.alt ?? content.founder.name}
-                  width={820}
-                  height={1220}
-                  sizes="(max-width: 640px) 68vw, (max-width: 1100px) 36vw, 460px"
-                />
-              </div>
-            ) : null}
-            <div className="founder-content">
-              <h2 id="founder-title">{content.founder.name}</h2>
-              <p className="founder-role">{content.founder.role}</p>
-              {verifiedFounderDetails.map((detail) => <p key={detail.body} className="founder-detail">{detail.body}</p>)}
-            </div>
-          </div>
+        <section className="founder section-light" id="jorge-valverde" aria-label={content.teamLabel}>
+          <TeamMemberRow member={content.founder} headingId="founder-title" />
+          {content.associates.map((associate, index) => (
+            <TeamMemberRow key={associate.name} member={associate} headingId={`associate-title-${index}`} />
+          ))}
         </section>
 
         <section className="contact section-contact" id="contacto" aria-labelledby="contact-title">

@@ -5,22 +5,11 @@ import { contactEmail, siteContent } from "../content/site-content.ts";
 test("both locales contain the same navigation and section counts", () => {
   assert.deepEqual(siteContent.es.nav.map((item) => item.href), ["#areas", "#contacto"]);
   assert.deepEqual(siteContent.en.nav.map((item) => item.href), ["#areas", "#contacto"]);
-  assert.equal(siteContent.es.practices.items.length, 5);
-  assert.equal(siteContent.en.practices.items.length, 5);
-  assert.deepEqual(siteContent.es.practices.items.map((item) => item.visual), [
-    "economics",
-    "regulation",
-    "finance",
-    "economics",
-    "regulation",
-  ]);
-  assert.deepEqual(siteContent.en.practices.items.map((item) => item.visual), [
-    "economics",
-    "regulation",
-    "finance",
-    "economics",
-    "regulation",
-  ]);
+  assert.equal(siteContent.es.practices.items.length, 6);
+  assert.equal(siteContent.en.practices.items.length, 6);
+  const icons = ["markets", "competition", "tax", "minerals", "legislation", "fdi"];
+  assert.deepEqual(siteContent.es.practices.items.map((item) => item.icon), icons);
+  assert.deepEqual(siteContent.en.practices.items.map((item) => item.icon), icons);
 });
 
 test("founder content and the supplied portrait are approved", () => {

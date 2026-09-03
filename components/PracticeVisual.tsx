@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
-import type { PracticeVisualKind } from "@/content/site-content";
+import type { PracticeIconKind } from "@/content/site-content";
 
 type MotionStyle = CSSProperties & {
   "--move-x"?: string;
@@ -42,6 +42,23 @@ const relationshipNodes: RelationshipNode[] = [
   { cx: 145, cy: 39, r: 4.5, dx: -6, dy: -12 },
   { cx: 164, cy: 67, r: 3, dx: 9, dy: 8, accent: true },
   { cx: 166, cy: 18, r: 5.5, dx: 8, dy: -7 },
+];
+
+// stepped terraces, like a mining cross-section
+const strataLayers = [
+  { width: 60, y: 8 },
+  { width: 88, y: 24 },
+  { width: 112, y: 40 },
+  { width: 140, y: 56 },
+  { width: 168, y: 72 },
+];
+
+// branching decision tree, like a legislative hierarchy
+const hierarchyLeaves = [
+  { x: 22, y: 78 },
+  { x: 68, y: 78, accent: true },
+  { x: 112, y: 78 },
+  { x: 156, y: 78 },
 ];
 
 function EconomicsBars() {
@@ -115,7 +132,72 @@ function RegulationRelationships() {
   );
 }
 
-export function PracticeVisual({ kind }: { kind: PracticeVisualKind }) {
+function StrataLayers() {
+  return (
+    <svg className="strata-layers" viewBox="0 0 180 90" focusable="false">
+      {strataLayers.map((layer, index) => (
+        <line
+          className={`strata-line${index === strataLayers.length - 2 ? " is-accent" : ""}`}
+          x1="0"
+          x2={layer.width}
+          y1={layer.y}
+          y2={layer.y}
+          pathLength="1"
+          key={layer.y}
+          style={{ transitionDelay: `${index * 110}ms` }}
+        />
+      ))}
+      <path className="strata-drill" d="M150 4 L94 86" pathLength="1" />
+    </svg>
+  );
+}
+
+function HierarchyTree() {
+  return (
+    <svg className="hierarchy-tree" viewBox="0 0 180 90" focusable="false">
+      <path className="hierarchy-link" d="M90 12 L90 30 M90 30 L22 30 L22 78" pathLength="1" />
+      <path className="hierarchy-link" d="M90 30 L68 30 L68 78" pathLength="1" style={{ transitionDelay: "90ms" }} />
+      <path className="hierarchy-link" d="M90 30 L112 30 L112 78" pathLength="1" style={{ transitionDelay: "180ms" }} />
+      <path className="hierarchy-link" d="M90 30 L156 30 L156 78" pathLength="1" style={{ transitionDelay: "270ms" }} />
+      <rect className="hierarchy-node hierarchy-root" x="80" y="2" width="20" height="12" rx="2" />
+      {hierarchyLeaves.map((leaf, index) => (
+        <rect
+          className={`hierarchy-node${leaf.accent ? " is-accent" : ""}`}
+          x={leaf.x - 9}
+          y={leaf.y}
+          width="18"
+          height="12"
+          rx="2"
+          key={leaf.x}
+          style={{ transitionDelay: `${420 + index * 90}ms` }}
+        />
+      ))}
+    </svg>
+  );
+}
+
+function InflowOrbit() {
+  return (
+    <svg className="inflow-orbit" viewBox="0 0 180 90" focusable="false">
+      <circle className="orbit-ring" cx="115" cy="45" r="16" pathLength="1" />
+      <circle className="orbit-ring orbit-ring-outer" cx="115" cy="45" r="32" pathLength="1" style={{ transitionDelay: "140ms" }} />
+      <circle className="orbit-core is-accent" cx="115" cy="45" r="5" />
+      <path className="orbit-arrow" d="M8 12 L48 30" pathLength="1" style={{ transitionDelay: "520ms" }} />
+      <path className="orbit-arrow" d="M48 30 L38 30 M48 30 L48 20" pathLength="1" style={{ transitionDelay: "680ms" }} />
+    </svg>
+  );
+}
+
+const visuals: Record<PracticeIconKind, () => React.ReactElement> = {
+  markets: EconomicsBars,
+  tax: FinanceLine,
+  competition: RegulationRelationships,
+  minerals: StrataLayers,
+  legislation: HierarchyTree,
+  fdi: InflowOrbit,
+};
+
+export function PracticeVisual({ kind }: { kind: PracticeIconKind }) {
   const rootRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -140,6 +222,8 @@ export function PracticeVisual({ kind }: { kind: PracticeVisualKind }) {
     return () => observer.disconnect();
   }, []);
 
+  const Visual = visuals[kind];
+
   return (
     <div
       aria-hidden="true"
@@ -147,9 +231,7 @@ export function PracticeVisual({ kind }: { kind: PracticeVisualKind }) {
       data-visible={visible}
       ref={rootRef}
     >
-      {kind === "economics" ? <EconomicsBars /> : null}
-      {kind === "finance" ? <FinanceLine /> : null}
-      {kind === "regulation" ? <RegulationRelationships /> : null}
+      <Visual />
     </div>
   );
 }

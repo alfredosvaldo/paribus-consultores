@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { BrandLockup } from "@/components/BrandLockup";
 import { HeroVideo } from "@/components/HeroVideo";
+import { PracticeIcon } from "@/components/PracticeIcon";
 import { PracticeVisual } from "@/components/PracticeVisual";
 import { SiteHeader } from "@/components/SiteHeader";
 import { contactEmail, isLocale, siteContent, type TeamMember } from "@/content/site-content";
@@ -108,9 +109,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <div className="practice-list">
               {content.practices.items.map((item) => (
                 <article className="practice-row" key={item.title}>
-                  <h3>{item.title}</h3>
+                  <h3><PracticeIcon kind={item.icon} />{item.title}</h3>
                   <p>{item.description}</p>
-                  <PracticeVisual kind={item.visual} />
+                  <PracticeVisual kind={item.icon} />
                 </article>
               ))}
             </div>

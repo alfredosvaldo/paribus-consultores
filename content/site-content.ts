@@ -2,8 +2,8 @@ export const locales = ["es", "en"] as const;
 
 export type Locale = (typeof locales)[number];
 
-export type PracticeVisualKind = "economics" | "finance" | "regulation";
-type PracticeArea = { title: string; description: string; visual: PracticeVisualKind };
+export type PracticeIconKind = "markets" | "competition" | "tax" | "minerals" | "legislation" | "fdi";
+type PracticeArea = { title: string; description: string; icon: PracticeIconKind };
 type PersonDetail = { body: string; verified: boolean };
 type PersonPortrait = {
   src: string | null;
@@ -79,13 +79,13 @@ export const siteContent: Record<Locale, SiteContent> = {
     languageLabel: "Cambiar idioma a inglés",
     hero: {
       descriptor: "Consultoría económica, financiera y regulatoria",
-      title: "Rigor para decisiones complejas.",
+      title: "Paribus. Rigor para decisiones complejas.",
       body: "Estructuramos problemas complejos, evaluamos escenarios y traducimos evidencia técnica en implicancias concretas.",
       primaryCta: "Áreas de práctica",
       secondaryCta: "Conversemos",
     },
     statement: {
-      title: "El análisis importa cuando cambia una decisión.",
+      title: "Porque en la práctica, no todo permanece constante.",
       body: "Combinamos economía, finanzas y análisis regulatorio para estructurar problemas complejos, ordenar la evidencia, evaluar escenarios y traducir el análisis en implicancias concretas para la decisión.",
     },
     practices: {
@@ -95,31 +95,37 @@ export const siteContent: Record<Locale, SiteContent> = {
           title: "Economía aplicada y modelamiento de mercados",
           description:
             "Análisis económico aplicado y modelamiento de mercados para comprender incentivos, escenarios y efectos sobre empresas e instituciones.",
-          visual: "economics",
+          icon: "markets",
         },
         {
           title: "Libre competencia, litigios y arbitrajes",
           description:
             "Análisis económico para procesos de libre competencia, litigios y arbitrajes, ante autoridades, tribunales y contrapartes.",
-          visual: "regulation",
+          icon: "competition",
         },
         {
-          title: "Política tributaria y fiscal",
+          title: "Tributación y finanzas públicas",
           description:
             "Evaluación y diseño de política tributaria y fiscal, incluyendo estimación de impactos y análisis de financiamiento público.",
-          visual: "finance",
+          icon: "tax",
         },
         {
           title: "Economía de minerales y evaluación de proyectos",
           description:
             "Economía de minerales y evaluación de proyectos, desde tributación y royalty hasta cadenas de valor y transición energética.",
-          visual: "economics",
+          icon: "minerals",
         },
         {
           title: "Regulación económica y análisis legislativo",
           description:
             "Análisis económico-regulatorio y legislativo para anticipar, evaluar y responder a cambios en marcos normativos y sectores regulados.",
-          visual: "regulation",
+          icon: "legislation",
+        },
+        {
+          title: "Fomento y atracción de FDI",
+          description:
+            "Estrategias de fomento y atracción de inversión extranjera directa, incluyendo análisis de competitividad, incentivos y posicionamiento de proyectos ante inversionistas.",
+          icon: "fdi",
         },
       ],
     },
@@ -129,8 +135,8 @@ export const siteContent: Record<Locale, SiteContent> = {
       role: "Fundador",
       portrait: {
         src: "/images/jorge-valverde-cutout.png",
-        width: 620,
-        height: 650,
+        width: 1024,
+        height: 1024,
         alt: "Retrato de Jorge Valverde Carbonell",
         verified: true,
         temporary: false,
@@ -139,15 +145,15 @@ export const siteContent: Record<Locale, SiteContent> = {
       },
       details: [
         {
-          body: "Jorge Valverde-Carbonell es doctor en Economía por la Universidad de Maastricht y el UNU-MERIT (Países Bajos) y magíster en Análisis Económico de la Universidad de Chile. Su trabajo académico —publicado en revistas de primer nivel como World Development, Resources Policy y Economic Analysis and Policy— se especializa en economía internacional, economía de minerales, transición energética y desarrollo productivo.",
+          body: "Jorge Valverde-Carbonell es doctor en Economía por la Universidad de Maastricht y el UNU-MERIT (Países Bajos) y magíster en Análisis Económico de la Universidad de Chile. Cuenta con más de 15 años como consultor económico senior, ha asesorado a los principales organismos multilaterales —el Banco Interamericano de Desarrollo (BID), la CEPAL, la OCDE, la UNCTAD y el Banco de Desarrollo de América Latina (CAF)—, a ministerios y organismos de gobierno, y a empresas e instituciones líderes como Codelco y Déficit Cero de la Cámara Chilena de la Construcción.",
           verified: true,
         },
         {
-          body: "Cuenta con más de 15 años como consultor económico senior. Ha asesorado a los principales organismos multilaterales —el Banco Interamericano de Desarrollo (BID), la CEPAL, la OCDE, la UNCTAD y el Banco de Desarrollo de América Latina (CAF)—, a ministerios y organismos de gobierno, y a empresas e instituciones líderes como Codelco y Déficit Cero de la Cámara Chilena de la Construcción. Sus trabajos abarcan un espectro amplio de materias: competitividad y desarrollo productivo, tributación minera y royalty, transición energética y minerales críticos, cadenas globales de valor, política fiscal y financiamiento de la vivienda, entre otras.",
+          body: "Sus trabajos abarcan un espectro amplio de materias: competitividad y desarrollo productivo, tributación minera y royalty, transición energética y minerales críticos, cadenas globales de valor, política fiscal y financiamiento de la vivienda, entre otras.",
           verified: true,
         },
         {
-          body: "Este alcance se apoya en un repertorio metodológico diverso y aplicado: modelamiento y proyección de mercados, técnicas de complejidad económica, estimación de tasas efectivas de tributación, análisis costo-beneficio, medición del valor agregado doméstico en cadenas globales de valor, construcción de cuentas de capital, simulación de escenarios de precios del carbono y econometría aplicada. A ello suma una perspectiva única de policymaker, ya que fue Asesor Económico Senior en el Ministerio de Hacienda de Chile, lo que le permite traducir análisis técnicos complejos en recomendaciones concretas de política y estrategia para la alta dirección.",
+          body: "A ello suma una perspectiva única de policymaker, ya que fue Asesor Económico Senior en el Ministerio de Hacienda de Chile, lo que le permite traducir análisis técnicos complejos en recomendaciones concretas de política y estrategia para la alta dirección.",
           verified: true,
         },
       ],
@@ -210,13 +216,13 @@ export const siteContent: Record<Locale, SiteContent> = {
     languageLabel: "Switch language to Spanish",
     hero: {
       descriptor: "Economic, financial and regulatory consulting",
-      title: "Rigour for complex decisions.",
+      title: "Paribus. Rigour for complex decisions.",
       body: "We structure complex problems, assess scenarios and turn technical evidence into concrete implications.",
       primaryCta: "Areas of Practice",
       secondaryCta: "Contact",
     },
     statement: {
-      title: "Analysis matters when it changes a decision.",
+      title: "Because in practice, nothing stays constant.",
       body: "We combine economics, finance and regulatory analysis to structure complex problems, organise the evidence, assess scenarios and translate analysis into concrete implications for decision-making.",
     },
     practices: {
@@ -226,31 +232,37 @@ export const siteContent: Record<Locale, SiteContent> = {
           title: "Applied economics and market modelling",
           description:
             "Applied economic analysis and market modelling to understand incentives, scenarios and their effects on companies and institutions.",
-          visual: "economics",
+          icon: "markets",
         },
         {
           title: "Competition, litigation and arbitration",
           description:
             "Economic analysis for competition proceedings, litigation and arbitration, before authorities, tribunals and counterparties.",
-          visual: "regulation",
+          icon: "competition",
         },
         {
-          title: "Tax and fiscal policy",
+          title: "Taxation and public finance",
           description:
             "Assessment and design of tax and fiscal policy, including impact estimation and public financing analysis.",
-          visual: "finance",
+          icon: "tax",
         },
         {
           title: "Mineral economics and project evaluation",
           description:
             "Mineral economics and project evaluation, spanning taxation and royalties to value chains and the energy transition.",
-          visual: "economics",
+          icon: "minerals",
         },
         {
           title: "Economic regulation and legislative analysis",
           description:
             "Economic and regulatory analysis, including legislative review, to anticipate, assess and respond to changes in regulatory frameworks and regulated sectors.",
-          visual: "regulation",
+          icon: "legislation",
+        },
+        {
+          title: "FDI promotion and attraction",
+          description:
+            "Strategies to promote and attract foreign direct investment, including competitiveness analysis, incentive design and positioning of projects for investors.",
+          icon: "fdi",
         },
       ],
     },
@@ -260,8 +272,8 @@ export const siteContent: Record<Locale, SiteContent> = {
       role: "Founder",
       portrait: {
         src: "/images/jorge-valverde-cutout.png",
-        width: 620,
-        height: 650,
+        width: 1024,
+        height: 1024,
         alt: "Portrait of Jorge Valverde Carbonell",
         verified: true,
         temporary: false,
@@ -270,15 +282,15 @@ export const siteContent: Record<Locale, SiteContent> = {
       },
       details: [
         {
-          body: "Jorge Valverde-Carbonell holds a PhD in Economics from Maastricht University and UNU-MERIT (Netherlands) and an MA in Economic Analysis from the University of Chile. His academic work —published in leading journals such as World Development, Resources Policy and Economic Analysis and Policy— specialises in international economics, mineral economics, the energy transition and productive development.",
+          body: "Jorge Valverde-Carbonell holds a PhD in Economics from Maastricht University and UNU-MERIT (Netherlands) and an MA in Economic Analysis from the University of Chile. He has more than 15 years of experience as a senior economic consultant, having advised leading multilateral organisations —the Inter-American Development Bank (IDB), ECLAC, the OECD, UNCTAD and the Development Bank of Latin America (CAF)—, government ministries and agencies, and leading companies and institutions such as Codelco and Déficit Cero at the Cámara Chilena de la Construcción.",
           verified: true,
         },
         {
-          body: "He has more than 15 years of experience as a senior economic consultant. He has advised leading multilateral organisations —the Inter-American Development Bank (IDB), ECLAC, the OECD, UNCTAD and the Development Bank of Latin America (CAF)—, government ministries and agencies, and leading companies and institutions such as Codelco and Déficit Cero at the Cámara Chilena de la Construcción. His work spans a broad range of topics: competitiveness and productive development, mining taxation and royalties, energy transition and critical minerals, global value chains, fiscal policy and housing finance, among others.",
+          body: "His work spans a broad range of topics: competitiveness and productive development, mining taxation and royalties, energy transition and critical minerals, global value chains, fiscal policy and housing finance, among others.",
           verified: true,
         },
         {
-          body: "This range draws on a diverse, applied methodological toolkit: market modelling and forecasting, economic complexity techniques, effective tax rate estimation, cost-benefit analysis, measurement of domestic value added in global value chains, capital account construction, carbon price scenario simulation and applied econometrics. He brings a distinctive policymaker perspective as well, having served as Senior Economic Advisor at Chile's Ministry of Finance, which allows him to translate complex technical analysis into concrete policy and strategy recommendations for senior leadership.",
+          body: "He brings a distinctive policymaker perspective as well, having served as Senior Economic Advisor at Chile's Ministry of Finance, which allows him to translate complex technical analysis into concrete policy and strategy recommendations for senior leadership.",
           verified: true,
         },
       ],

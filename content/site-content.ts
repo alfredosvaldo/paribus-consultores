@@ -134,7 +134,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       name: "Jorge Valverde Carbonell",
       role: "Fundador",
       portrait: {
-        src: "/images/jorge-valverde-cutout.png",
+        src: "/images/jorge-valverde-portrait.jpg",
         width: 2048,
         height: 2048,
         alt: "Retrato de Jorge Valverde Carbonell",
@@ -271,7 +271,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       name: "Jorge Valverde Carbonell",
       role: "Founder",
       portrait: {
-        src: "/images/jorge-valverde-cutout.png",
+        src: "/images/jorge-valverde-portrait.jpg",
         width: 2048,
         height: 2048,
         alt: "Portrait of Jorge Valverde Carbonell",

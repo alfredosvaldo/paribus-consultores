@@ -32,6 +32,16 @@ const financePoints = [
   [175, 31],
 ] as const;
 
+const growthPoints = [
+  [5, 78],
+  [33, 66],
+  [59, 68],
+  [86, 50],
+  [113, 54],
+  [142, 30],
+  [175, 16],
+] as const;
+
 const relationshipNodes: RelationshipNode[] = [
   { cx: 18, cy: 58, r: 3.5, dx: -10, dy: 8 },
   { cx: 39, cy: 30, r: 6.5, dx: -7, dy: -11 },
@@ -95,6 +105,28 @@ function FinanceLine() {
           cy={cy}
           key={`${cx}-${cy}`}
           r={index === financePoints.length - 1 ? 3 : 2.1}
+          style={{ transitionDelay: `${650 + index * 55}ms` }}
+        />
+      ))}
+    </svg>
+  );
+}
+
+function GrowthLine() {
+  return (
+    <svg className="finance-line" viewBox="0 0 180 90" focusable="false">
+      <path
+        className="finance-path"
+        d="M5 78 L33 66 L59 68 L86 50 L113 54 L142 30 L175 16"
+        pathLength="1"
+      />
+      {growthPoints.map(([cx, cy], index) => (
+        <circle
+          className={`finance-point${index === growthPoints.length - 1 ? " is-accent" : ""}`}
+          cx={cx}
+          cy={cy}
+          key={`${cx}-${cy}`}
+          r={index === growthPoints.length - 1 ? 3 : 2.1}
           style={{ transitionDelay: `${650 + index * 55}ms` }}
         />
       ))}
@@ -195,6 +227,7 @@ const visuals: Record<PracticeIconKind, () => React.ReactElement> = {
   minerals: StrataLayers,
   legislation: HierarchyTree,
   fdi: InflowOrbit,
+  esg: GrowthLine,
 };
 
 export function PracticeVisual({ kind }: { kind: PracticeIconKind }) {

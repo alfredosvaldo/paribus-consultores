@@ -5,9 +5,9 @@ import { contactEmail, siteContent } from "../content/site-content.ts";
 test("both locales contain the same navigation and section counts", () => {
   assert.deepEqual(siteContent.es.nav.map((item) => item.href), ["#areas", "#contacto"]);
   assert.deepEqual(siteContent.en.nav.map((item) => item.href), ["#areas", "#contacto"]);
-  assert.equal(siteContent.es.practices.items.length, 6);
-  assert.equal(siteContent.en.practices.items.length, 6);
-  const icons = ["markets", "competition", "tax", "minerals", "legislation", "fdi"];
+  assert.equal(siteContent.es.practices.items.length, 7);
+  assert.equal(siteContent.en.practices.items.length, 7);
+  const icons = ["markets", "competition", "tax", "minerals", "legislation", "fdi", "esg"];
   assert.deepEqual(siteContent.es.practices.items.map((item) => item.icon), icons);
   assert.deepEqual(siteContent.en.practices.items.map((item) => item.icon), icons);
 });
@@ -23,17 +23,21 @@ test("founder content and the supplied portrait are approved", () => {
   }
 });
 
-test("associate content and portrait are approved", () => {
+test("associate content and portraits are approved", () => {
   for (const locale of ["es", "en"] as const) {
-    assert.equal(siteContent[locale].associates.length, 1);
-    const [associate] = siteContent[locale].associates;
-    assert.equal(associate.name, "Alexis Salazar");
-    assert.equal(associate.portrait.src, "/images/alexis-salazar-cutout.png");
-    assert.equal(associate.portrait.verified, true);
-    assert.equal(associate.portrait.temporary, false);
-    assert.equal(associate.portrait.approvedForProduction, true);
-    assert.equal(associate.portrait.sourceUrl, null);
-    assert.equal(associate.details.every((detail) => detail.verified), true);
+    assert.equal(siteContent[locale].associates.length, 2);
+    const [alexis, sofia] = siteContent[locale].associates;
+    assert.equal(alexis.name, "Alexis Salazar");
+    assert.equal(alexis.portrait.src, "/images/alexis-salazar-cutout.png");
+    assert.equal(sofia.name, "Sofía Aroca");
+    assert.equal(sofia.portrait.src, "/images/sofia-aroca-cutout.png");
+    for (const associate of siteContent[locale].associates) {
+      assert.equal(associate.portrait.verified, true);
+      assert.equal(associate.portrait.temporary, false);
+      assert.equal(associate.portrait.approvedForProduction, true);
+      assert.equal(associate.portrait.sourceUrl, null);
+      assert.equal(associate.details.every((detail) => detail.verified), true);
+    }
   }
 });
 

@@ -2,7 +2,7 @@ export const locales = ["es", "en"] as const;
 
 export type Locale = (typeof locales)[number];
 
-export type PracticeIconKind = "markets" | "competition" | "tax" | "minerals" | "legislation" | "fdi";
+export type PracticeIconKind = "markets" | "competition" | "tax" | "minerals" | "legislation" | "fdi" | "esg";
 type PracticeArea = { title: string; description: string; icon: PracticeIconKind };
 type PersonDetail = { body: string; verified: boolean };
 type PersonPortrait = {
@@ -127,6 +127,12 @@ export const siteContent: Record<Locale, SiteContent> = {
             "Estrategias de fomento y atracción de inversión extranjera directa, incluyendo análisis de competitividad, incentivos y posicionamiento de proyectos ante inversionistas.",
           icon: "fdi",
         },
+        {
+          title: "Economía ambiental y finanzas sostenibles",
+          description:
+            "Análisis económico ambiental y de finanzas sostenibles, incluyendo valoración de externalidades, riesgos climáticos y estructuración de instrumentos de financiamiento verde.",
+          icon: "esg",
+        },
       ],
     },
     teamLabel: "Equipo",
@@ -179,6 +185,34 @@ export const siteContent: Record<Locale, SiteContent> = {
           },
           {
             body: "Cuenta con más de doce años de experiencia en consultoría económica, litigios y arbitraje, y libre competencia, asesorando a empresas y estudios jurídicos en Chile y Europa. Fue Coordinador Económico Anticarteles en la FNE y trabajó en Compass Lexecon (Bruselas) y Butelmann Consultores. Es socio fundador de SG Economics y docente de postgrado en la Universidad Adolfo Ibáñez.",
+            verified: true,
+          },
+        ],
+      },
+      {
+        name: "Sofía Aroca",
+        role: "Consultora asociada",
+        portrait: {
+          src: "/images/sofia-aroca-cutout.png",
+          width: 576,
+          height: 576,
+          alt: "Retrato de Sofía Aroca",
+          verified: true,
+          temporary: false,
+          approvedForProduction: true,
+          sourceUrl: null,
+        },
+        details: [
+          {
+            body: "Sofía Aroca es economista de la Universidad de Chile, con un MSc en Environment and Development de la London School of Economics, becaria Chevening. Trabaja en el cruce entre economía, naturaleza y biodiversidad, ayudando a que el valor de los ecosistemas se vuelva parte de las decisiones económicas y financieras de empresas, fondos y organismos públicos.",
+            verified: true,
+          },
+          {
+            body: "Ha trabajado con el Centro de Medio Ambiente de SOFOFA, con el Fondo Naturaleza Chile y con WWF en el estudio de instrumentos de financiamiento para la conservación. Ha realizado estudios de impacto económico regional para el Puerto de Valparaíso, Colún y Hyst.",
+            verified: true,
+          },
+          {
+            body: "También ha trabajado en el Ministerio de Hacienda, donde fue Secretaria Técnica del Comité de Capital Natural, por lo que recibió el Natural Capital Young Leaders Prize del Natural Capital Project de la Universidad de Stanford. Actualmente investiga la valoración del capital natural marino en el Grantham Research Institute de LSE.",
             verified: true,
           },
         ],
@@ -264,6 +298,12 @@ export const siteContent: Record<Locale, SiteContent> = {
             "Strategies to promote and attract foreign direct investment, including competitiveness analysis, incentive design and positioning of projects for investors.",
           icon: "fdi",
         },
+        {
+          title: "Environmental economics and sustainable finance",
+          description:
+            "Environmental economic analysis and sustainable finance, including externality valuation, climate risk assessment and the structuring of green financing instruments.",
+          icon: "esg",
+        },
       ],
     },
     teamLabel: "Team",
@@ -316,6 +356,34 @@ export const siteContent: Record<Locale, SiteContent> = {
           },
           {
             body: "He has over twelve years of experience across economic consulting, litigation and arbitration, and competition law, advising companies and law firms in Chile and Europe. He served as Anti-Cartel Economic Coordinator at Chile's competition authority (FNE) and worked at Compass Lexecon (Brussels) and Butelmann Consultores. He is a founding partner of SG Economics and teaches postgraduate courses at Universidad Adolfo Ibáñez.",
+            verified: true,
+          },
+        ],
+      },
+      {
+        name: "Sofía Aroca",
+        role: "Associate Consultant",
+        portrait: {
+          src: "/images/sofia-aroca-cutout.png",
+          width: 576,
+          height: 576,
+          alt: "Portrait of Sofía Aroca",
+          verified: true,
+          temporary: false,
+          approvedForProduction: true,
+          sourceUrl: null,
+        },
+        details: [
+          {
+            body: "Sofía Aroca is an economist from the Universidad de Chile, with an MSc in Environment and Development from the London School of Economics as a Chevening scholar. She works at the intersection of economics, nature and biodiversity, helping the value of ecosystems become part of the economic and financial decisions of companies, funds and public agencies.",
+            verified: true,
+          },
+          {
+            body: "She has worked with SOFOFA's Centre for the Environment, with Fondo Naturaleza Chile and with WWF studying financing instruments for conservation. She has carried out regional economic impact studies for the Port of Valparaíso, Colún and Hyst.",
+            verified: true,
+          },
+          {
+            body: "She has also worked at Chile's Ministry of Finance, where she was Technical Secretary of the Natural Capital Committee, for which she received the Natural Capital Young Leaders Prize from Stanford University's Natural Capital Project. She is currently researching the valuation of marine natural capital at LSE's Grantham Research Institute.",
             verified: true,
           },
         ],

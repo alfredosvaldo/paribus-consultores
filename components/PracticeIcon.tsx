@@ -52,6 +52,14 @@ const paths: Record<PracticeIconKind, React.ReactNode> = {
       <path d="M21 3 L14 10" />
     </>
   ),
+  // leaf with a rising growth line
+  esg: (
+    <>
+      <path d="M6 20 C4 12 8 5 17 4 C17 13 11 18 6 20 Z" />
+      <path d="M6 20 C8 15 11 11 17 4" />
+      <path d="M3 14 L8 10 L11 12 L15 7" />
+    </>
+  ),
 };
 
 export function PracticeIcon({ kind }: { kind: PracticeIconKind }) {

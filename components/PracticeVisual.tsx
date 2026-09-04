@@ -32,16 +32,6 @@ const financePoints = [
   [175, 31],
 ] as const;
 
-const growthPoints = [
-  [5, 78],
-  [33, 66],
-  [59, 68],
-  [86, 50],
-  [113, 54],
-  [142, 30],
-  [175, 16],
-] as const;
-
 const relationshipNodes: RelationshipNode[] = [
   { cx: 18, cy: 58, r: 3.5, dx: -10, dy: 8 },
   { cx: 39, cy: 30, r: 6.5, dx: -7, dy: -11 },
@@ -112,24 +102,23 @@ function FinanceLine() {
   );
 }
 
-function GrowthLine() {
+// filled growth silhouette rising to a sprouting leaf, unlike the plain line/dot charts
+function GrowthCanopy() {
   return (
-    <svg className="finance-line" viewBox="0 0 180 90" focusable="false">
+    <svg className="growth-canopy" viewBox="0 0 180 90" focusable="false">
       <path
-        className="finance-path"
-        d="M5 78 L33 66 L59 68 L86 50 L113 54 L142 30 L175 16"
+        className="canopy-area"
+        d="M5 86 L5 72 C28 76 44 54 61 51 C81 47 93 27 112 23 C133 18 150 11 175 4 L175 86 Z"
+      />
+      <path
+        className="canopy-line"
+        d="M5 72 C28 76 44 54 61 51 C81 47 93 27 112 23 C133 18 150 11 175 4"
         pathLength="1"
       />
-      {growthPoints.map(([cx, cy], index) => (
-        <circle
-          className={`finance-point${index === growthPoints.length - 1 ? " is-accent" : ""}`}
-          cx={cx}
-          cy={cy}
-          key={`${cx}-${cy}`}
-          r={index === growthPoints.length - 1 ? 3 : 2.1}
-          style={{ transitionDelay: `${650 + index * 55}ms` }}
-        />
-      ))}
+      <g className="canopy-leaf" transform="translate(175 4)">
+        <path d="M0 14 C-8 9 -8 -6 0 -15 C8 -6 8 9 0 14 Z" />
+        <path d="M0 12 L0 -13" />
+      </g>
     </svg>
   );
 }
@@ -227,7 +216,7 @@ const visuals: Record<PracticeIconKind, () => React.ReactElement> = {
   minerals: StrataLayers,
   legislation: HierarchyTree,
   fdi: InflowOrbit,
-  esg: GrowthLine,
+  esg: GrowthCanopy,
 };
 
 export function PracticeVisual({ kind }: { kind: PracticeIconKind }) {

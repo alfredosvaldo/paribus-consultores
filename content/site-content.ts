@@ -217,6 +217,66 @@ export const siteContent: Record<Locale, SiteContent> = {
           },
         ],
       },
+      {
+        name: "George Lambeth",
+        role: "Consultor asociado",
+        portrait: {
+          src: "/images/george-lambeth-cutout.png",
+          width: 576,
+          height: 576,
+          alt: "Retrato de George Lambeth",
+          verified: true,
+          temporary: false,
+          approvedForProduction: true,
+          sourceUrl: null,
+        },
+        details: [
+          {
+            body: "George Lambeth es abogado de la Universidad de Chile, LL.M. por UC Berkeley Law y candidato a Doctor en Derecho por la misma universidad, con formación de posgrado en análisis económico en la Facultad de Economía y Negocios de la Universidad de Chile.",
+            verified: true,
+          },
+          {
+            body: "Trabaja en la intersección entre regulación económica, derecho público económico, finanzas públicas, inversión, infraestructura y diseño institucional. Cuenta con más de diez años de experiencia en el sector público chileno, habiéndose desempeñado en el Ministerio de Hacienda, la Dirección de Presupuestos (Dipres) y la Fiscalía Nacional Económica (FNE), donde participó en el diseño, análisis e implementación de reformas regulatorias, financieras, presupuestarias y de libre competencia.",
+            verified: true,
+          },
+          {
+            body: "En el Ministerio de Hacienda fue asesor en materias de regulación económica, coordinación interministerial e inversión, participando en agendas de modernización regulatoria, permisos sectoriales, facilitación de proyectos estratégicos y coherencia institucional. Previamente, en la Dipres, trabajó en análisis de finanzas públicas, empresas del Estado, infraestructura y riesgos de implementación fiscal e institucional.",
+            verified: true,
+          },
+          {
+            body: "Fue director de Empresa Portuaria Valparaíso, donde participó en materias de gobierno corporativo, concesiones, continuidad operacional, riesgos contractuales y diseño competitivo de proyectos de expansión portuaria.",
+            verified: true,
+          },
+        ],
+      },
+      {
+        name: "Francisco Picón",
+        role: "Consultor asociado",
+        portrait: {
+          src: "/images/francisco-picon-cutout.png",
+          width: 576,
+          height: 576,
+          alt: "Retrato de Francisco Picón",
+          verified: true,
+          temporary: false,
+          approvedForProduction: true,
+          sourceUrl: null,
+        },
+        details: [
+          {
+            body: "Francisco Picón es abogado de la Pontificia Universidad Católica de Chile. Cuenta con un Magíster en Derecho Constitucional de la misma casa de estudios y un Diploma en Estrategias Políticas para Políticas Públicas de la Universidad de Chile. Actualmente reside en Inglaterra, donde cursa el Master of Public Policy en la Blavatnik School of Government de la Universidad de Oxford, como becario Luksic.",
+            verified: true,
+          },
+          {
+            body: "Ha trabajado buena parte de su carrera en el sector público. Fue Comisionado de Inversiones de InvestChile para el Golfo con base en Riad, Arabia Saudita, y antes jefe de gabinete y abogado senior de la misma agencia. En el sector privado se desempeñó como consultor senior de asuntos públicos en Extend, donde asesoró a empresas y asociaciones gremiales de industrias reguladas como farmacéutica, fintech y recursos naturales, en diseño regulatorio y estrategias de vinculación con el Congreso y el Ejecutivo.",
+            verified: true,
+          },
+          {
+            body: "Durante el último año ha asesorado a empresas, inversionistas y organismos públicos en materias regulatorias y de inversión extranjera, en sectores como minería, energía, desalación, hidrógeno verde e infraestructura digital.",
+            verified: true,
+          },
+        ],
+      },
     ],
     contact: {
       title: "Conversemos.",
@@ -384,6 +444,66 @@ export const siteContent: Record<Locale, SiteContent> = {
           },
           {
             body: "She has also worked at Chile's Ministry of Finance, where she was Technical Secretary of the Natural Capital Committee, for which she received the Natural Capital Young Leaders Prize from Stanford University's Natural Capital Project. She is currently researching the valuation of marine natural capital at LSE's Grantham Research Institute.",
+            verified: true,
+          },
+        ],
+      },
+      {
+        name: "George Lambeth",
+        role: "Associate Consultant",
+        portrait: {
+          src: "/images/george-lambeth-cutout.png",
+          width: 576,
+          height: 576,
+          alt: "Portrait of George Lambeth",
+          verified: true,
+          temporary: false,
+          approvedForProduction: true,
+          sourceUrl: null,
+        },
+        details: [
+          {
+            body: "George Lambeth is a lawyer from the Universidad de Chile, holds an LL.M. from UC Berkeley Law and is a doctoral candidate in Law at the same university, with postgraduate training in economic analysis at the Universidad de Chile's School of Economics and Business.",
+            verified: true,
+          },
+          {
+            body: "He works at the intersection of economic regulation, public economic law, public finance, investment, infrastructure and institutional design. He has more than ten years of experience in the Chilean public sector, having served at the Ministry of Finance, the Budget Office (Dipres) and the National Economic Prosecutor's Office (FNE), where he took part in the design, analysis and implementation of regulatory, financial, budgetary and competition reforms.",
+            verified: true,
+          },
+          {
+            body: "At the Ministry of Finance he advised on economic regulation, inter-ministerial coordination and investment, contributing to agendas on regulatory modernisation, sectoral permitting, the facilitation of strategic projects and institutional coherence. Previously, at Dipres, he worked on public finance analysis, state-owned enterprises, infrastructure and fiscal and institutional implementation risks.",
+            verified: true,
+          },
+          {
+            body: "He served as a director of Empresa Portuaria Valparaíso, where he worked on corporate governance, concessions, operational continuity, contractual risk and the competitive design of port expansion projects.",
+            verified: true,
+          },
+        ],
+      },
+      {
+        name: "Francisco Picón",
+        role: "Associate Consultant",
+        portrait: {
+          src: "/images/francisco-picon-cutout.png",
+          width: 576,
+          height: 576,
+          alt: "Portrait of Francisco Picón",
+          verified: true,
+          temporary: false,
+          approvedForProduction: true,
+          sourceUrl: null,
+        },
+        details: [
+          {
+            body: "Francisco Picón is a lawyer from the Pontificia Universidad Católica de Chile. He holds a Master's in Constitutional Law from the same university and a Diploma in Political Strategies for Public Policy from the Universidad de Chile. He currently lives in England, where he is reading for the Master of Public Policy at the University of Oxford's Blavatnik School of Government as a Luksic scholar.",
+            verified: true,
+          },
+          {
+            body: "He has spent much of his career in the public sector. He served as InvestChile's Investment Commissioner for the Gulf, based in Riyadh, Saudi Arabia, and previously as the agency's chief of staff and senior lawyer. In the private sector he was a senior public affairs consultant at Extend, advising companies and trade associations in regulated industries such as pharmaceuticals, fintech and natural resources on regulatory design and engagement strategies with Congress and the Executive.",
+            verified: true,
+          },
+          {
+            body: "Over the past year he has advised companies, investors and public agencies on regulatory and foreign investment matters in sectors such as mining, energy, desalination, green hydrogen and digital infrastructure.",
             verified: true,
           },
         ],

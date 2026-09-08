@@ -25,12 +25,16 @@ test("founder content and the supplied portrait are approved", () => {
 
 test("associate content and portraits are approved", () => {
   for (const locale of ["es", "en"] as const) {
-    assert.equal(siteContent[locale].associates.length, 2);
-    const [alexis, sofia] = siteContent[locale].associates;
+    assert.equal(siteContent[locale].associates.length, 4);
+    const [alexis, sofia, george, francisco] = siteContent[locale].associates;
     assert.equal(alexis.name, "Alexis Salazar");
     assert.equal(alexis.portrait.src, "/images/alexis-salazar-cutout.png");
     assert.equal(sofia.name, "Sofía Aroca");
     assert.equal(sofia.portrait.src, "/images/sofia-aroca-cutout.png");
+    assert.equal(george.name, "George Lambeth");
+    assert.equal(george.portrait.src, "/images/george-lambeth-cutout.png");
+    assert.equal(francisco.name, "Francisco Picón");
+    assert.equal(francisco.portrait.src, "/images/francisco-picon-cutout.png");
     for (const associate of siteContent[locale].associates) {
       assert.equal(associate.portrait.verified, true);
       assert.equal(associate.portrait.temporary, false);

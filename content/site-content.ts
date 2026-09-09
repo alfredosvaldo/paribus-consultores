@@ -277,6 +277,38 @@ export const siteContent: Record<Locale, SiteContent> = {
           },
         ],
       },
+      {
+        name: "Sergio Henríquez",
+        role: "Consultor externo",
+        portrait: {
+          src: "/images/sergio-henriquez-cutout.png",
+          width: 576,
+          height: 576,
+          alt: "Retrato de Sergio Henríquez",
+          verified: true,
+          temporary: false,
+          approvedForProduction: true,
+          sourceUrl: null,
+        },
+        details: [
+          {
+            body: "Sergio Henríquez es abogado de la Universidad de Chile y Magíster en Derecho Tributario de la misma casa de estudios. Cuenta con más de 15 años de experiencia en materia tributaria, desarrollada tanto en el sector público como en el ejercicio privado.",
+            verified: true,
+          },
+          {
+            body: "Fue Director de Grandes Contribuyentes del Servicio de Impuestos Internos (SII), dirección encargada de la fiscalización de los principales grupos empresariales del país. Con anterioridad se desempeñó en el Ministerio de Hacienda como asesor y luego Coordinador de Política Tributaria y como Jefe de Gabinete de la Subsecretaría de Hacienda. También fue Jefe de Gabinete del Ministerio de Vivienda y Urbanismo.",
+            verified: true,
+          },
+          {
+            body: "En el ámbito privado ejerció como abogado tributario en Sapag y González y en Bofill Escobar Silva, y como Gerente Senior en KPMG, especializándose en tributación inmobiliaria e internacional. Actualmente es abogado Of Counsel en el estudio Valdés y Munita.",
+            verified: true,
+          },
+          {
+            body: "Ha sido, además, docente de cursos de postgrado en derecho tributario en la Universidad Adolfo Ibáñez y en la Pontificia Universidad Católica de Valparaíso.",
+            verified: true,
+          },
+        ],
+      },
     ],
     contact: {
       title: "Conversemos.",
@@ -504,6 +536,38 @@ export const siteContent: Record<Locale, SiteContent> = {
           },
           {
             body: "Over the past year he has advised companies, investors and public agencies on regulatory and foreign investment matters in sectors such as mining, energy, desalination, green hydrogen and digital infrastructure.",
+            verified: true,
+          },
+        ],
+      },
+      {
+        name: "Sergio Henríquez",
+        role: "External Consultant",
+        portrait: {
+          src: "/images/sergio-henriquez-cutout.png",
+          width: 576,
+          height: 576,
+          alt: "Portrait of Sergio Henríquez",
+          verified: true,
+          temporary: false,
+          approvedForProduction: true,
+          sourceUrl: null,
+        },
+        details: [
+          {
+            body: "Sergio Henríquez is a lawyer from the Universidad de Chile and holds a Master's in Tax Law from the same university. He has more than 15 years of experience in tax matters, gained both in the public sector and in private practice.",
+            verified: true,
+          },
+          {
+            body: "He served as Director of Large Taxpayers at Chile's tax authority (SII), the division responsible for auditing the country's largest business groups. He previously worked at the Ministry of Finance as an adviser and later Coordinator of Tax Policy, and as Chief of Staff to the Deputy Ministry of Finance. He was also Chief of Staff at the Ministry of Housing and Urban Development.",
+            verified: true,
+          },
+          {
+            body: "In private practice he worked as a tax lawyer at Sapag y González and at Bofill Escobar Silva, and as a Senior Manager at KPMG, specialising in real estate and international taxation. He is currently Of Counsel at the firm Valdés y Munita.",
+            verified: true,
+          },
+          {
+            body: "He has also taught postgraduate courses in tax law at Universidad Adolfo Ibáñez and at the Pontificia Universidad Católica de Valparaíso.",
             verified: true,
           },
         ],

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { BrandLockup } from "@/components/BrandLockup";
 import type { SiteContent } from "@/content/site-content";
 
@@ -11,6 +11,7 @@ export function SiteHeader({ locale, nav, languageLabel, accessibility }: SiteHe
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const alternateLocale = locale === "es" ? "en" : "es";
+  const alternateHref = usePathname().replace(`/${locale}`, `/${alternateLocale}`);
 
   useEffect(() => {
     document.body.classList.toggle("menu-open", open);
@@ -20,21 +21,24 @@ export function SiteHeader({ locale, nav, languageLabel, accessibility }: SiteHe
   const switchLanguage = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     setOpen(false);
-    router.push(`/${alternateLocale}${window.location.hash}`);
+    router.push(alternateHref + window.location.hash);
   };
+
+  // Nav hrefs are locale-relative ("#areas", "/news") so they work from any page.
+  const localeHref = (href: string) => `/${locale}${href}`;
 
   return (
     <header className="site-header frame">
-      <a className="wordmark" href="#inicio" aria-label={accessibility.home}>
+      <a className="wordmark" href={localeHref("#inicio")} aria-label={accessibility.home}>
         <BrandLockup />
       </a>
       <nav className="desktop-nav" aria-label={accessibility.mainNav}>
         <div className="nav-links">
-          {nav.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
+          {nav.map((item) => <a key={item.href} href={localeHref(item.href)}>{item.label}</a>)}
         </div>
       </nav>
       <div className="header-actions">
-        <a className="language-link" href={`/${alternateLocale}`} aria-describedby="language-switch-description" onClick={switchLanguage}>
+        <a className="language-link" href={alternateHref} aria-describedby="language-switch-description" onClick={switchLanguage}>
           <span className={locale === "es" ? "active" : undefined}>ES</span>
           <span aria-hidden="true">/</span>
           <span className={locale === "en" ? "active" : undefined}>EN</span>
@@ -54,7 +58,7 @@ export function SiteHeader({ locale, nav, languageLabel, accessibility }: SiteHe
       <nav id="mobile-navigation" className="mobile-navigation" aria-label={accessibility.mainNav} data-open={open}>
         <div className="mobile-nav-inner frame">
           {nav.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+            <a key={item.href} href={localeHref(item.href)} onClick={() => setOpen(false)}>
               {item.label}
             </a>
           ))}

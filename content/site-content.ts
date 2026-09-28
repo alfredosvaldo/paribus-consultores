@@ -22,6 +22,8 @@ export type TeamMember = {
   details: PersonDetail[];
 };
 
+export type NewsItem = { date: string; title: string; summary: string; href?: string };
+
 export const contactEmail = "jvalverde@paribus.cl";
 
 export type SiteContent = {
@@ -54,7 +56,11 @@ export type SiteContent = {
     emailCta: string;
   };
   footer: { descriptor: string; location: string };
+  news: { title: string; intro: string; empty: string; items: NewsItem[] };
 };
+
+// Add news here, newest first. date is ISO (YYYY-MM-DD); href is optional (external article, PDF, etc.).
+const newsItems: NewsItem[] = [];
 
 export const siteContent: Record<Locale, SiteContent> = {
   es: {
@@ -74,6 +80,8 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     nav: [
       { label: "Áreas de práctica", href: "#areas" },
+      { label: "Equipo", href: "#equipo" },
+      { label: "Noticias", href: "/news" },
       { label: "Contacto", href: "#contacto" },
     ],
     languageLabel: "Cambiar idioma a inglés",
@@ -319,6 +327,12 @@ export const siteContent: Record<Locale, SiteContent> = {
       descriptor: "Consultoría económica, financiera y regulatoria",
       location: "Santiago, Chile",
     },
+    news: {
+      title: "Noticias",
+      intro: "Publicaciones, participación en medios y novedades de Paribus.",
+      empty: "Pronto publicaremos nuestras primeras noticias.",
+      items: newsItems,
+    },
   },
   en: {
     locale: "en",
@@ -337,6 +351,8 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     nav: [
       { label: "Areas of Practice", href: "#areas" },
+      { label: "Team", href: "#equipo" },
+      { label: "News", href: "/news" },
       { label: "Contact", href: "#contacto" },
     ],
     languageLabel: "Switch language to Spanish",
@@ -581,6 +597,12 @@ export const siteContent: Record<Locale, SiteContent> = {
     footer: {
       descriptor: "Economic, financial and regulatory consulting",
       location: "Santiago, Chile",
+    },
+    news: {
+      title: "News",
+      intro: "Publications, media appearances and updates from Paribus.",
+      empty: "Our first news items are coming soon.",
+      items: newsItems,
     },
   },
 };

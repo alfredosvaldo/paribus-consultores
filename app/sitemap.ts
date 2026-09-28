@@ -8,10 +8,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "x-default": `${siteUrl}/es`,
   };
 
-  return ["es", "en"].map((locale) => ({
-    url: `${siteUrl}/${locale}`,
-    changeFrequency: "monthly" as const,
-    priority: locale === "es" ? 1 : 0.9,
-    alternates: { languages },
-  }));
+  return ["es", "en"].flatMap((locale) => [
+    {
+      url: `${siteUrl}/${locale}`,
+      changeFrequency: "monthly" as const,
+      priority: locale === "es" ? 1 : 0.9,
+      alternates: { languages },
+    },
+    {
+      url: `${siteUrl}/${locale}/news`,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+      alternates: { languages: { es: `${siteUrl}/es/news`, en: `${siteUrl}/en/news` } },
+    },
+  ]);
 }

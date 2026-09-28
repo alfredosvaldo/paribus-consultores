@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { BrandLockup } from "@/components/BrandLockup";
 import { HeroVideo } from "@/components/HeroVideo";
 import { PracticeIcon } from "@/components/PracticeIcon";
 import { PracticeVisual } from "@/components/PracticeVisual";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { contactEmail, isLocale, siteContent, type TeamMember } from "@/content/site-content";
 import { configuredSiteUrl, isIndexable } from "@/lib/site-config";
@@ -65,7 +65,7 @@ function TeamMemberRow({ member, headingId }: { member: TeamMember; headingId: s
         </div>
       ) : null}
       <div className="founder-content">
-        <h2 id={headingId}>{member.name}</h2>
+        <h3 id={headingId}>{member.name}</h3>
         <p className="founder-role">{member.role}</p>
         {verifiedDetails.map((detail) => <p key={detail.body} className="founder-detail">{detail.body}</p>)}
       </div>
@@ -118,7 +118,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </section>
 
-        <section className="founder section-light" id="jorge-valverde" aria-label={content.teamLabel}>
+        <section className="founder" id="equipo" aria-labelledby="team-title">
+          <div className="section-heading team-heading frame"><h2 id="team-title">{content.teamLabel}</h2></div>
           <TeamMemberRow member={content.founder} headingId="founder-title" />
           {content.associates.map((associate, index) => (
             <TeamMemberRow key={associate.name} member={associate} headingId={`associate-title-${index}`} />
@@ -132,12 +133,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </section>
       </main>
-      <footer className="site-footer">
-        <div className="footer-grid frame">
-          <div><p className="footer-brand"><BrandLockup showDescriptor={false} /></p><p>{content.footer.descriptor}</p><p>{content.footer.location}</p></div>
-          <p>© {new Date().getFullYear()} paribus</p>
-        </div>
-      </footer>
+      <SiteFooter footer={content.footer} />
       {configuredSiteUrl ? (
         <script
           type="application/ld+json"

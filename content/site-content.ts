@@ -59,9 +59,6 @@ export type SiteContent = {
   news: { title: string; intro: string; empty: string; items: NewsItem[] };
 };
 
-// Add news here, newest first. date is ISO (YYYY-MM-DD); href is optional (external article, PDF, etc.).
-const newsItems: NewsItem[] = [];
-
 export const siteContent: Record<Locale, SiteContent> = {
   es: {
     locale: "es",
@@ -331,7 +328,16 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: "Noticias",
       intro: "Publicaciones, participación en medios y novedades de Paribus.",
       empty: "Pronto publicaremos nuestras primeras noticias.",
-      items: newsItems,
+      // Newest first. date is ISO (YYYY-MM-DD); href is optional (article URL or a PDF in public/news/).
+      items: [
+        {
+          date: "2026-09-26",
+          title: "El Mercurio: Jorge Valverde sobre el empleo que generará la inversión aprobada en 2026",
+          summary:
+            "En la cobertura sobre el récord de inversiones con aprobación ambiental, nuestro fundador estima que la demanda laboral de estos proyectos se notaría a fines de 2027, y con mayor seguridad a principios de 2028.",
+          href: "/news/2026-09-26-el-mercurio-jorge-valverde.pdf",
+        },
+      ],
     },
   },
   en: {
@@ -602,7 +608,15 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: "News",
       intro: "Publications, media appearances and updates from Paribus.",
       empty: "Our first news items are coming soon.",
-      items: newsItems,
+      items: [
+        {
+          date: "2026-09-26",
+          title: "El Mercurio: Jorge Valverde on the jobs from investment approved in 2026",
+          summary:
+            "In coverage of this year's record in environmentally approved investment, our founder estimates that the resulting demand for labour would be felt by late 2027, and more reliably in early 2028. Article in Spanish.",
+          href: "/news/2026-09-26-el-mercurio-jorge-valverde.pdf",
+        },
+      ],
     },
   },
 };

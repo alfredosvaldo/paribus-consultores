@@ -314,6 +314,30 @@ export const siteContent: Record<Locale, SiteContent> = {
           },
         ],
       },
+      {
+        name: "María Paz Sandoval",
+        role: "Consultora asociada",
+        portrait: {
+          src: "/images/maria-paz-sandoval-cutout.png",
+          width: 576,
+          height: 576,
+          alt: "Retrato de María Paz Sandoval",
+          verified: true,
+          temporary: false,
+          approvedForProduction: true,
+          sourceUrl: null,
+        },
+        details: [
+          {
+            body: "María Paz Sandoval Bravo es economista con un MP Digital, Technologies and Policy de la University College London (UCL) y candidata a doctora en el Centre for Doctoral Training en Ciberseguridad de la misma universidad. Cuenta con más de quince años de experiencia entre el sector público, el privado y organismos internacionales, con foco en la relación entre regulación, tecnología y decisiones de política pública. En el sector público trabajó en el Ministerio de Hacienda de Chile, participando en el diseño de la Estrategia Nacional de Educación Financiera.",
+            verified: true,
+          },
+          {
+            body: "Desde 2021 combina sus estudios doctorales con consultorías en el ámbito financiero, específicamente en materia regulatoria. En Londres ha sido investigadora en gobernanza de IA y ciberseguridad para el Home Office, la Policía de Londres y el Department for Science, Innovation and Technology a través de Responsible Artificial Intelligence UK (RAI UK-UKRI), con trabajos publicados en el Journal of Science Policy and Governance sobre deepfakes. Desde 2024 es miembro del Comité Asesor del Índice Latinoamericano de Inteligencia Artificial, del Centro Nacional de Inteligencia Artificial en Chile.",
+            verified: true,
+          },
+        ],
+      },
     ],
     contact: {
       title: "Conversemos.",
@@ -590,6 +614,30 @@ export const siteContent: Record<Locale, SiteContent> = {
           },
           {
             body: "He has also taught postgraduate courses in tax law at Universidad Adolfo Ibáñez and at the Pontificia Universidad Católica de Valparaíso.",
+            verified: true,
+          },
+        ],
+      },
+      {
+        name: "María Paz Sandoval",
+        role: "Associate Consultant",
+        portrait: {
+          src: "/images/maria-paz-sandoval-cutout.png",
+          width: 576,
+          height: 576,
+          alt: "Portrait of María Paz Sandoval",
+          verified: true,
+          temporary: false,
+          approvedForProduction: true,
+          sourceUrl: null,
+        },
+        details: [
+          {
+            body: "María Paz Sandoval Bravo is an economist with an MSc in Digital, Technologies and Policy from University College London (UCL) and a PhD candidate at UCL’s Centre for Doctoral Training in Cybersecurity. She has more than fifteen years of experience across the public sector, the private sector and international organisations, focused on the relationship between regulation, technology and public policy decisions. In the public sector she worked at Chile’s Ministry of Finance, helping design the National Financial Education Strategy.",
+            verified: true,
+          },
+          {
+            body: "Since 2021 she has combined her doctoral studies with consulting in the financial field, specifically on regulatory matters. In London she has been a researcher on AI governance and cybersecurity for the Home Office, the Metropolitan Police and the Department for Science, Innovation and Technology through Responsible Artificial Intelligence UK (RAI UK-UKRI), with work published in the Journal of Science Policy and Governance on deepfakes. Since 2024 she has been a member of the Advisory Committee of the Latin American Artificial Intelligence Index, of Chile’s National Center for Artificial Intelligence.",
             verified: true,
           },
         ],

@@ -3,8 +3,8 @@ import test from "node:test";
 import { contactEmail, siteContent } from "../content/site-content.ts";
 
 test("both locales contain the same navigation and section counts", () => {
-  assert.deepEqual(siteContent.es.nav.map((item) => item.href), ["#areas", "#contacto"]);
-  assert.deepEqual(siteContent.en.nav.map((item) => item.href), ["#areas", "#contacto"]);
+  assert.deepEqual(siteContent.es.nav.map((item) => item.href), ["#areas", "#equipo", "/news", "#contacto"]);
+  assert.deepEqual(siteContent.en.nav.map((item) => item.href), ["#areas", "#equipo", "/news", "#contacto"]);
   assert.equal(siteContent.es.practices.items.length, 7);
   assert.equal(siteContent.en.practices.items.length, 7);
   const icons = ["markets", "competition", "tax", "minerals", "legislation", "fdi", "esg"];
@@ -25,8 +25,8 @@ test("founder content and the supplied portrait are approved", () => {
 
 test("associate content and portraits are approved", () => {
   for (const locale of ["es", "en"] as const) {
-    assert.equal(siteContent[locale].associates.length, 5);
-    const [alexis, sofia, george, francisco, sergio] = siteContent[locale].associates;
+    assert.equal(siteContent[locale].associates.length, 6);
+    const [alexis, sofia, george, francisco, sergio, mariaPaz] = siteContent[locale].associates;
     assert.equal(alexis.name, "Alexis Salazar");
     assert.equal(alexis.portrait.src, "/images/alexis-salazar-cutout.png");
     assert.equal(sofia.name, "Sofía Aroca");
@@ -37,6 +37,8 @@ test("associate content and portraits are approved", () => {
     assert.equal(francisco.portrait.src, "/images/francisco-picon-cutout.png");
     assert.equal(sergio.name, "Sergio Henríquez");
     assert.equal(sergio.portrait.src, "/images/sergio-henriquez-cutout.png");
+    assert.equal(mariaPaz.name, "María Paz Sandoval");
+    assert.equal(mariaPaz.portrait.src, "/images/maria-paz-sandoval-cutout.png");
     for (const associate of siteContent[locale].associates) {
       assert.equal(associate.portrait.verified, true);
       assert.equal(associate.portrait.temporary, false);

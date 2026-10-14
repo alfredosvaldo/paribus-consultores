@@ -148,8 +148,8 @@ export const siteContent: Record<Locale, SiteContent> = {
     productAreas: {
       title: "Áreas de expertise y productos",
       areas: [
-        { title: "Regulación y asuntos públicos", accent: "yellow", products: ["Regulatory Impact Assessment", "Regulatory Strategy", "Policy Benchmark", "Investment at Risk Review", "Position Paper Técnico", "Regulatory Due Diligence", "Permitting & Invest Readiness", "FNE Transaction Readiness", "Digital Governance Readiness"] },
-        { title: "Economía aplicada y política pública", accent: "green", products: ["Country & Macro Outlook", "Market Modelling & Forecast", "Sector Competitiveness Review", "Fiscal Impact Assessment", "Cost-Benefit Analysis", "Natural Capital & Risk Review"] },
+        { title: "Regulación y Políticas Públicas", accent: "yellow", products: ["Regulatory Impact Assessment", "Regulatory Strategy", "Policy Benchmark", "Investment at Risk Review", "Position Paper Técnico", "Regulatory Due Diligence", "Permitting & Invest Readiness", "FNE Transaction Readiness", "Digital Governance Readiness"] },
+        { title: "Análisis Económico", accent: "green", products: ["Country & Macro Outlook", "Market Modelling & Forecast", "Sector Competitiveness Review", "Fiscal Impact Assessment", "Cost-Benefit Analysis", "Natural Capital & Risk Review"] },
         { title: "Minería y minerales críticos", accent: "cyan", products: ["Mining Fiscal Regime Review", "Mineral Market Outlook", "Critical Minerals Strategy", "Mining Value Chain Review", "Mining Project Appraisal"] },
         { title: "Tributación y valorización", accent: "magenta", products: ["Transfer Pricing Valuation", "Tax Valuation", "Property Tax Appraisal", "Tax Impact Report"] },
       ],
@@ -464,8 +464,8 @@ export const siteContent: Record<Locale, SiteContent> = {
     productAreas: {
       title: "Expertise areas and products",
       areas: [
-        { title: "Regulation and public affairs", accent: "yellow", products: ["Regulatory Impact Assessment", "Regulatory Strategy", "Policy Benchmark", "Investment at Risk Review", "Technical Position Paper", "Regulatory Due Diligence", "Permitting & Investment Readiness", "FNE Transaction Readiness", "Digital Governance Readiness"] },
-        { title: "Applied economics and public policy", accent: "green", products: ["Country & Macro Outlook", "Market Modelling & Forecast", "Sector Competitiveness Review", "Fiscal Impact Assessment", "Cost-Benefit Analysis", "Natural Capital & Risk Review"] },
+        { title: "Regulation and Public Policy", accent: "yellow", products: ["Regulatory Impact Assessment", "Regulatory Strategy", "Policy Benchmark", "Investment at Risk Review", "Technical Position Paper", "Regulatory Due Diligence", "Permitting & Investment Readiness", "FNE Transaction Readiness", "Digital Governance Readiness"] },
+        { title: "Economic Analysis", accent: "green", products: ["Country & Macro Outlook", "Market Modelling & Forecast", "Sector Competitiveness Review", "Fiscal Impact Assessment", "Cost-Benefit Analysis", "Natural Capital & Risk Review"] },
         { title: "Mining and critical minerals", accent: "cyan", products: ["Mining Fiscal Regime Review", "Mineral Market Outlook", "Critical Minerals Strategy", "Mining Value Chain Review", "Mining Project Appraisal"] },
         { title: "Taxation and valuation", accent: "magenta", products: ["Transfer Pricing Valuation", "Tax Valuation", "Property Tax Appraisal", "Tax Impact Report"] },
       ],

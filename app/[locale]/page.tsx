@@ -107,6 +107,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="practices-layout frame">
             <div className="section-heading"><h2 id="practices-title">{content.practices.title}</h2></div>
             <div className="practice-list">
+              <div className="practices-lead">
+                <p>{content.productAreasIntro}</p>
+                <a className="text-link" href={`/${locale}/expertise`}>{content.productAreasLink}<span aria-hidden="true"> ↗</span></a>
+              </div>
               {content.practices.items.map((item) => (
                 <article className="practice-row" key={item.title}>
                   <h3><PracticeIcon kind={item.icon} />{item.title}</h3>

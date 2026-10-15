@@ -371,6 +371,13 @@ export const siteContent: Record<Locale, SiteContent> = {
       // Newest first. date is ISO (YYYY-MM-DD); href is optional (article URL or a PDF in public/news/).
       items: [
         {
+          date: "2026-10-15",
+          title: "Diario Financiero: IVA cero a la vivienda, pan para hoy, hambre para mañana",
+          summary:
+            "En una columna de DF Tax, Sergio Henríquez y Jorge Valverde analizan los efectos de la exención temporal del IVA a la vivienda, sus límites para reducir precios y su costo fiscal.",
+          href: "https://www.df.cl/opinion/columnistas/df-tax-iva-cero-a-la-vivienda-pan-para-hoy-hambre-para-manana",
+        },
+        {
           date: "2026-09-26",
           title: "El Mercurio: Jorge Valverde sobre el empleo que generará la inversión aprobada en 2026",
           summary:
@@ -685,6 +692,13 @@ export const siteContent: Record<Locale, SiteContent> = {
       intro: "Publications, media appearances and updates from Paribus.",
       empty: "Our first news items are coming soon.",
       items: [
+        {
+          date: "2026-10-15",
+          title: "Diario Financiero: zero VAT on housing, bread today, hunger tomorrow",
+          summary:
+            "In a DF Tax column, Sergio Henríquez and Jorge Valverde examine the effects of the temporary VAT exemption on housing, its limitations in lowering prices and its fiscal cost. Article in Spanish.",
+          href: "https://www.df.cl/opinion/columnistas/df-tax-iva-cero-a-la-vivienda-pan-para-hoy-hambre-para-manana",
+        },
         {
           date: "2026-09-26",
           title: "El Mercurio: Jorge Valverde on the jobs from investment approved in 2026",

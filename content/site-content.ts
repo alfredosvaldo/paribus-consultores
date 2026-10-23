@@ -371,6 +371,13 @@ export const siteContent: Record<Locale, SiteContent> = {
       // Newest first. date is ISO (YYYY-MM-DD); href is optional (article URL or a PDF in public/news/).
       items: [
         {
+          date: "2026-10-22",
+          title: "El Mostrador: El presupuesto ambiental 2027, un mal negocio para Chile",
+          summary:
+            "En una columna de opinión, Santiago Correa y Sofía Aroca advierten que el proyecto de Presupuesto 2027 debilita la capacidad del Estado para prevenir daños ambientales y fiscalizar, con un ahorro mínimo frente a sus costos de largo plazo.",
+          href: "https://www.elmostrador.cl/noticias/opinion/columnas/2026/10/22/el-presupuesto-ambiental-2027-un-mal-negocio-para-chile/",
+        },
+        {
           date: "2026-10-15",
           title: "Diario Financiero: IVA cero a la vivienda, pan para hoy, hambre para mañana",
           summary:
@@ -692,6 +699,13 @@ export const siteContent: Record<Locale, SiteContent> = {
       intro: "Publications, media appearances and updates from Paribus.",
       empty: "Our first news items are coming soon.",
       items: [
+        {
+          date: "2026-10-22",
+          title: "El Mostrador: the 2027 environmental budget, a bad deal for Chile",
+          summary:
+            "In an opinion column, Santiago Correa and Sofía Aroca warn that the 2027 Budget bill weakens the State's capacity to prevent environmental damage and enforce regulations, with minimal savings compared to its long-term costs. Article in Spanish.",
+          href: "https://www.elmostrador.cl/noticias/opinion/columnas/2026/10/22/el-presupuesto-ambiental-2027-un-mal-negocio-para-chile/",
+        },
         {
           date: "2026-10-15",
           title: "Diario Financiero: zero VAT on housing, bread today, hunger tomorrow",

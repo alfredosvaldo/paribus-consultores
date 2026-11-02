@@ -102,13 +102,6 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: "Áreas de práctica",
       items: [
         {
-          date: "2026-11-02",
-          title: "El Mercurio: ¿Reactivación en 2027? El flujo de nuevas inversiones que desafía la gestión de la “permisología”",
-          summary:
-            "En el reportaje de Economía y Negocios, Jorge Valverde, fundador de Paribus y del Observatorio Económico de Permisos, analiza el ingreso de nuevos proyectos al sistema de evaluación ambiental y los plazos para que se traduzca en inversión efectiva.",
-          href: "/news/2026-11-02-el-mercurio-permisologia-2027.pdf",
-        },
-        {
           title: "Economía aplicada y modelamiento de mercados",
           description:
             "Análisis económico aplicado y modelamiento de mercados para comprender incentivos, escenarios y efectos sobre empresas e instituciones.",
@@ -379,9 +372,9 @@ export const siteContent: Record<Locale, SiteContent> = {
       items: [
         {
           date: "2026-11-02",
-          title: "El Mercurio: a recovery in 2027? The flow of new investment that challenges “permit” management",
+          title: "El Mercurio: ¿Reactivación en 2027? El flujo de nuevas inversiones que desafía la gestión de la “permisología”",
           summary:
-            "In this Economía y Negocios feature, Jorge Valverde, founder of Paribus and of the Observatorio Económico de Permisos, discusses the new projects entering the environmental assessment system and the timelines for them to become actual investment. Article in Spanish.",
+            "En el reportaje de Economía y Negocios, Jorge Valverde, fundador de Paribus y del Observatorio Económico de Permisos, analiza el ingreso de nuevos proyectos al sistema de evaluación ambiental y los plazos para que se traduzca en inversión efectiva.",
           href: "/news/2026-11-02-el-mercurio-permisologia-2027.pdf",
         },
         {
@@ -713,6 +706,13 @@ export const siteContent: Record<Locale, SiteContent> = {
       intro: "Publications, media appearances and updates from Paribus.",
       empty: "Our first news items are coming soon.",
       items: [
+        {
+          date: "2026-11-02",
+          title: "El Mercurio: a recovery in 2027? The flow of new investment that challenges “permit” management",
+          summary:
+            "In this Economía y Negocios feature, Jorge Valverde, founder of Paribus and of the Observatorio Económico de Permisos, discusses the new projects entering the environmental assessment system and the timelines for them to become actual investment. Article in Spanish.",
+          href: "/news/2026-11-02-el-mercurio-permisologia-2027.pdf",
+        },
         {
           date: "2026-10-22",
           title: "El Mostrador: the 2027 environmental budget, a bad deal for Chile",

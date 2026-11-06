@@ -45,6 +45,30 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
                     <time dateTime={item.date}>{formatDate.format(new Date(item.date))}</time>
                     <h2>{item.href ? <a href={item.href}>{item.title}</a> : item.title}</h2>
                     <p>{item.summary}</p>
+                    {item.links && (
+                      <p className="news-links">
+                        {item.links.map((link) => (
+                          <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
+                        ))}
+                      </p>
+                    )}
+                    {item.video && (
+                      <figure className="news-video">
+                        <div className="news-video-frame">
+                          <iframe
+                            src={item.video.embedUrl}
+                            title={item.video.title}
+                            loading="lazy"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allow="encrypted-media; picture-in-picture"
+                            allowFullScreen
+                          />
+                        </div>
+                        <figcaption>
+                          {item.video.credit} · <a href={item.video.fallbackHref} target="_blank" rel="noopener noreferrer">{item.video.fallbackLabel}</a>
+                        </figcaption>
+                      </figure>
+                    )}
                   </article>
                 </li>
               ))}

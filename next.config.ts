@@ -9,7 +9,7 @@ const securityHeaders = [
   {
     key: "Content-Security-Policy",
     // React dev mode needs eval(); production never uses it.
-    value: `default-src 'self'; script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : ""}; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; font-src 'self'; frame-ancestors 'none'`,
+    value: `default-src 'self'; script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : ""}; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; frame-src https://www.youtube-nocookie.com; font-src 'self'; frame-ancestors 'none'`,
   },
 ];
 

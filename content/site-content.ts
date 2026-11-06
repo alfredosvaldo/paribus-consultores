@@ -23,7 +23,15 @@ export type TeamMember = {
   details: PersonDetail[];
 };
 
-export type NewsItem = { date: string; title: string; summary: string; href?: string };
+export type NewsVideo = { embedUrl: string; title: string; fallbackHref: string; fallbackLabel: string; credit: string };
+export type NewsItem = {
+  date: string;
+  title: string;
+  summary: string;
+  href?: string;
+  links?: { label: string; href: string }[];
+  video?: NewsVideo;
+};
 
 export const contactEmail = "jvalverde@paribus.cl";
 
@@ -371,6 +379,23 @@ export const siteContent: Record<Locale, SiteContent> = {
       // Newest first. date is ISO (YYYY-MM-DD); href is optional (article URL or a PDF in public/news/).
       items: [
         {
+          date: "2026-11-03",
+          title: "El estudio del OEP, citado en Radio Infinita",
+          summary:
+            "En el programa “Ahora es Cuando”, Francisco Vidal citó el estudio del Observatorio Económico de Permisos (OEP), creado, diseñado y desarrollado por Paribus, sobre la demora entre la aprobación ambiental (RCA) y la concreción de grandes inversiones. Nombró a Jorge Valverde y al OEP, y destacó que los proyectos aprobados asocian unos 120 mil empleos, con un rezago de 2 a 4 años.",
+          links: [
+            { label: "Sitio del OEP", href: "https://oep-chile.com" },
+            { label: "Informe 2026-T3", href: "https://oep-chile.com/informes/2026-t3/" },
+          ],
+          video: {
+            embedUrl: "https://www.youtube-nocookie.com/embed/2IPvrTZ6ix0?start=1222&end=1285",
+            title: "Fragmento de Radio Infinita, programa Ahora es Cuando: Francisco Vidal cita el estudio del OEP",
+            fallbackHref: "https://youtu.be/2IPvrTZ6ix0?t=1222",
+            fallbackLabel: "Ver en YouTube",
+            credit: "Fragmento: Radio Infinita, Ahora es Cuando, 3 nov 2026",
+          },
+        },
+        {
           date: "2026-11-02",
           title: "El Mercurio: ¿Reactivación en 2027? El flujo de nuevas inversiones que desafía la gestión de la “permisología”",
           summary:
@@ -706,6 +731,23 @@ export const siteContent: Record<Locale, SiteContent> = {
       intro: "Publications, media appearances and updates from Paribus.",
       empty: "Our first news items are coming soon.",
       items: [
+        {
+          date: "2026-11-03",
+          title: "The OEP study, cited on Radio Infinita",
+          summary:
+            "On the programme “Ahora es Cuando”, Francisco Vidal cited the study by the Observatorio Económico de Permisos (OEP), created, designed and developed by Paribus, on the delay between environmental approval (RCA) and the realisation of large investments. He named Jorge Valverde and the OEP, noting that approved projects are associated with about 120,000 jobs, arriving with a lag of 2 to 4 years. Audio in Spanish.",
+          links: [
+            { label: "OEP website", href: "https://oep-chile.com" },
+            { label: "2026-Q3 report", href: "https://oep-chile.com/informes/2026-t3/" },
+          ],
+          video: {
+            embedUrl: "https://www.youtube-nocookie.com/embed/2IPvrTZ6ix0?start=1222&end=1285",
+            title: "Excerpt from Radio Infinita, programme Ahora es Cuando: Francisco Vidal cites the OEP study",
+            fallbackHref: "https://youtu.be/2IPvrTZ6ix0?t=1222",
+            fallbackLabel: "Watch on YouTube",
+            credit: "Excerpt: Radio Infinita, Ahora es Cuando, 3 Nov 2026",
+          },
+        },
         {
           date: "2026-11-02",
           title: "El Mercurio: a recovery in 2027? The flow of new investment that challenges “permit” management",
